@@ -1,9 +1,10 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Redirect, Switch } from "react-router-dom";
-import Home from "Routes/Home/HomePresenter";
-import Search from "Routes/Search/Search";
+import Home from "Routes/Home";
+import Search from "Routes/Search";
 import Header from "Components/Header";
-import TV from "Routes/TV/TV";
+import TV from "Routes/TV";
+import Detail from "Routes/Detail";
 
 export default () => (
   <Router>
@@ -13,6 +14,8 @@ export default () => (
         <Route path="/" exact component={Home} />
         <Route path="/tv" exact component={TV} />
         <Route path="/search" exact component={Search} />
+        <Route path="/movie/:id" exact component={Detail} />
+        <Route path="/tv/:id" exact component={Detail} />
         <Redirect from="*" to="/" />
       </Switch>
     </>
